@@ -22,7 +22,6 @@ public class CrimeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_layout, container, false);
 
-        //Button button = view.findViewById(R.id.my_button);
         crimeDateButton = view.findViewById(R.id.crime_date);
         crimeSolvedCheckBox = view.findViewById(R.id.crime_solved);
         crimeTitleEditText = view.findViewById(R.id.crime_title);
@@ -37,7 +36,5 @@ public class CrimeFragment extends Fragment {
         });
 
         return view;
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_layout, container, false);
     }
 }

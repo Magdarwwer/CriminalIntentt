@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,10 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.FragmentAdapter;
-
 import java.util.List;
-
+import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mCrimeRecyclerView;
@@ -30,11 +29,22 @@ public class MainActivity extends AppCompatActivity {
 
         mCrimeRecyclerView = (RecyclerView)findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Button button = findViewById(R.id.my_button);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new FragmentAdapter(this));
+        List<Crime> crimes = new ArrayList<>();
+        // Add some example crimes to the list
+        for (int i = 0; i < 100; i++) {
+            Crime crime = new Crime();
+            crime.setTitle("Crime #" + i);
+            crime.setSolved(i % 2 == 0); // Every other crime is solved
+            crimes.add(crime);
+        }
+
+        //RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setAdapter(new FragmentAdapter(this));
+
+        mAdapter = new CrimeAdapter(crimes);
+        mCrimeRecyclerView.setAdapter(mAdapter);
 
         // Set a click listener on the button
         button.setOnClickListener(new View.OnClickListener() {

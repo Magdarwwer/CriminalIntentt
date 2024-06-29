@@ -16,3 +16,9 @@
         android:layout_height="wrap_content"
         android:text="Crime Date"/>
 </LinearLayout>
+
+    This layout defines
+    how each item in your RecyclerView (CrimeAdapter) will look.
+    in the RecyclerView list (mCrimeRecyclerView) will look.
+    It should contain the layout for displaying a
+    single crime item. This is already correctly defined.
