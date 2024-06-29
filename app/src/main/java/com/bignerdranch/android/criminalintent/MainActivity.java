@@ -1,9 +1,6 @@
 package com.bignerdranch.android.criminalintent;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -39,21 +38,8 @@ public class MainActivity extends AppCompatActivity {
             crimes.add(crime);
         }
 
-        //RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //recyclerView.setAdapter(new FragmentAdapter(this));
-
         mAdapter = new CrimeAdapter(crimes);
         mCrimeRecyclerView.setAdapter(mAdapter);
-
-        // Set a click listener on the button
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle button click event
-                Toast.makeText(MainActivity.this, "Button clicked!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         // Check if the fragment is already added
         if (savedInstanceState == null) {
