@@ -14,9 +14,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import java.util.List;
-import com.FragmentAdapterInterface;
 
-public class CrimeAdapter extends RecyclerView.Adapter<CrimeAdapter.FragmentViewHolder> implements FragmentAdapterInterface {
+public class CrimeAdapter extends RecyclerView.Adapter<CrimeAdapter.FragmentViewHolder>  {
 
     private List<Crime> mCrimes;
     public CrimeAdapter(List<Crime> crimes) {
